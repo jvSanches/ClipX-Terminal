@@ -53,8 +53,8 @@ class monitor:
             
         min_y = min([min(i.queue) for i in self.hists])
         max_y = max([max(i.queue) for i in self.hists])
-        min_y = min(min_y , -1)
-        max_y = max(max_y , 1)
+        min_y = min(min_y , -0.2)
+        max_y = max(max_y , 0.2)
         marg = 0.1*(max_y - min_y)
         
         plt.ylim([min_y-marg, max_y+marg])
