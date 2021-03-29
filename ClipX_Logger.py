@@ -31,13 +31,13 @@ while 1:
         else:
             print("Press Space to stop")
             
-
     s.sendall(b'SDO?x44f0,4 \r\n')
     data = s.recv(1024)
     time_hist.append(time.time()-start_time)
     torque_hist.append(float(data))
     
 s.close()
+print(len(time_hist), "Values acquired")
 print("Saving csv file")
 formats = [('Comma Separated values', '*.csv'), ]
 file_name = asksaveasfilename(filetypes=formats, title="Save logged data as...", defaultextension = formats, initialfile = ("Log at "+ datetime.datetime.now().strftime("%m-%d-%Y_%Hh%M")))
